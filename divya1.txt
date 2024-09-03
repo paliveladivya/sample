@@ -1,0 +1,118 @@
+"use strict";
+"use strict" ;
+var firstName = "srujana"
+let lastName = "vasavi"
+const firstName1 = "keerthi"
+
+// Global variable
+let keerthi = 22
+var srujana = 19
+const kumari = 33
+// local variable
+  let jay = 44
+console.log(keerthi)
+console.log(srujana)
+console.log(kumari)
+console.log(janu)
+let  a = 10
+let b= 4
+console.log((a+b),(a-b),(a*b),(a/b),(a%b))
+// comparition 
+console.log((a==b),(a!=b),(a===b),(a!==b),(a<=b),(a>=b),(a<b),(a>b))
+// logical operators
+let amala = true
+var jivana = false
+console.log((amala) && (jivana))
+console.log((amala) || (jivana))
+console.log(!(amala) && (jivana))
+// primitive data types 
+const E = "nadiya"
+const F = 22
+const G = true
+const H = " "
+const I = (undefined)
+console.log(E)
+console.log(F)
+console.log(G)
+console.log(H)
+console.log(I)
+//Type Conversion and Coercion
+const input = '1919'
+const input1 = 2020
+console.log(Number(input), input);
+ console.log(Number(input) + 18);
+ console.log(String(input1),input1)
+ console.log(Boolean(input1),input1)
+// Coercion
+ const js = "191"
+ console.log('the js: ' + js + '.');
+ console.log('I am ' + (23<=191) + ' years old');
+console.log("The " +js+ " is a lucky number")
+
+//Strings and Template Literals
+
+
+const q='janaki'
+const r='nitya'
+console.log(q+r)
+console.log(q.length)
+console.log(r.length)
+//
+let jsv = 'janu'
+console.log(`the jsv means: ${jsv}`);
+
+//Decision Making Statements
+
+let m = 'sandya'
+const n = 'mani'
+if(m=n){
+    console.log('The length of both strings are equal ')
+}
+else if (m=n){
+    console.log('The length of both strings are not equal')
+}
+else {
+    console.log('enter  NEW string')
+}
+
+//Switch statements:
+
+const Number1 = 3;
+switch(Number1){
+    case 1 :
+        console.log('Hello every one ');
+        console.log('Get ready ');
+    break;
+    case 2 :
+        console.log('For the trip ');
+        console.log('to the world ');
+    break;
+    case 3 :
+        console.log('Don for the life ');
+        console.log('No fear ');
+    break;
+    case 4 :
+        console.log('Dont worry for the future ');
+        console.log('Just chill');
+    break;
+    
+}
+
+//Function Call and Its Definition
+function preethi(a,b){
+console.log(`hi i ${a} am sandya ${b}`)
+}
+preethi(1,2)
+preethi(3,4)
+preethi(5,6)
+
+//Chaining function calls:
+
+
+let birthYear = 1911;
+
+function calcAge(birthYear) {
+    return 2034-birthYear;
+     }
+    
+calcAge(1234)
