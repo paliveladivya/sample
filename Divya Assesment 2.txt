@@ -1,0 +1,156 @@
+"use strict"
+//Array and methods 
+const fruits = ["apple","orange","grapes"]
+for(let i=0;i<=2;i++){
+console.log(fruits[i])
+}
+console.log(fruits.length)
+
+
+//operations :Add, Remove - push(), pop(), unshift(), shift() Methods in Arrays
+const newlength = fruits.push("pineapple","kiwi","banana")
+console.log(fruits)
+const newlength1 = fruits.pop([5])
+console.log(fruits)
+fruits.unshift("banana")
+console.log(fruits)
+fruits.shift()
+console.log(fruits)
+
+
+///objects and its properties
+const student = {
+    name:"srujana",
+    age:2030-1997,
+    city:"hong kong",
+}
+    console.log(student.name)
+    console.log(student['name'])
+    student.occupation = "Bussiness Man"
+    console.log(student)
+    student['hobbies']="Reading books"
+    console.log(student)
+
+
+//objects with proprtie and methods
+const car = {
+    make:"BMW",
+    model:"sports",
+    year:2023,
+}
+function drive(){
+    console.log("THIS IS THE BRAND NEW CAR")
+}
+let a = 10, b=20
+let caluclator = {
+    add: a+b,
+    sub : a-b,
+    multiply: a*b,
+    devide: a/b,
+}
+console.log(caluclator.add)
+a = 4 
+b= 6
+console.log(caluclator.sub)
+a= 9
+b=3
+console.log(caluclator.multiply)
+a = 7
+b = 5
+console.log(caluclator.devide)
+
+///Looping Arrays, - Break and Continue Statements
+
+ for (let i = 1; i <= 8; i++) {
+     console.log(`hello every one this is the loop ${i}`);
+ }
+ let i=1
+ while (i<=6){
+    console.log(`dont give up ${i}`)
+    i++
+ }
+const Array = [1,22,"srujana","keerthi",33,44]
+
+for (let i = 0; i < Array.length; i++) {
+    if (typeof Array[i] == "string")  continue;
+    console.log(Array[i], typeof Array [i]);
+    
+}
+for (let i = 0; i < Array.length; i++) {
+    if (typeof Array[i] !== "string")  break;
+    console.log(Array[i], typeof Array [i]);
+    
+}
+/// sum of an array
+const Array1 = [22,34,54,67];
+let sum = 0;
+for(let i=0;i<=Array1.length;i++){
+   sum = sum + Array1[1]
+}
+console.log(`sum of an array ${sum}`)
+
+//find first even num in array
+// let j = 0;
+// while(j<=Array1.length)
+//     {
+//       if(Array1[j]%2==0)
+//         {  
+//             console.log(`even: ${Array1[j]}`)
+//             j++;
+//       }
+//     }
+
+
+
+/////////////////// Hoisting
+//Variables
+// console.log(me);
+// // console.log(job);
+// // console.log(year);
+
+var me = "janu";
+let job = "Teacher";
+const year = 1991;
+
+//keyword 'this'
+//console.log(this) 
+my(7788)
+const my = function(year){
+    console.log(2020-year);
+    console.log(this)
+
+ const my1 = year=>{
+    console.log(2020-year);
+    console.log(this)
+}
+  my1(2017)
+
+}
+ const janu = {
+    year: 1991, 
+
+    Age: function () {
+        console.log(this);
+        console.log(2037 - this.year);
+    }
+}
+
+janu.Age();
+//////////// Arguments keyword
+const addExpr = function (a, b) {
+    console.log(arguments);
+    return a + b;
+}
+
+console.log(addExpr(2, 5));
+console.log(addExpr(7, 8, 2, 5, 9));
+
+
+// var addArrow = (a, b) => {
+//     console.log(arguments);
+//     return a + b;
+// }
+
+// console.log(addArrow(3, 6));
+
+
