@@ -1,0 +1,316 @@
+
+///////Assessment 3 
+//shallow copy
+const person1 = {
+    name:"mani",
+    age:20,
+    location:"hyderabad",
+}
+const person2 = person1
+console.log(person2)
+console.log(person2.name["keerthi"])
+
+// Data structers 
+// const restaurant = {
+//         name: "Peeter parker ", 
+//         location: "Via Angelo Tavanti, 23, Frienze, Italy", 
+//         starterMenu: {name:"Focaccia",
+//         cost:200,
+//         discription:"italian dish", }
+//         {Bruschetta:"",  }
+//        {GarlicBread:"", }
+//         {CapreseSalad:"",}
+// } 
+// }
+// console.log(restaurant.starterMenu[0])
+
+const restaurant = {
+    name: "Bhanu Priya",
+    location: "123 Main St, Anytown, USA",
+    menu: [
+      {
+        name: "Grilled Chicken Salad",
+        price: 12.99,
+        description: "Mixed greens with grilled chicken, cherry tomatoes, and balsamic vinaigrette"
+      },
+      {
+        name: "Pan-Seared Salmon",
+        price: 19.99,
+        description: "Fresh salmon fillet with roasted vegetables and quia"
+      },
+      {
+        name: "Veggie Burger",
+        price: 10.99,
+        description: "Black bean patty with avocado, lettuce, and tomato on whole-grain bread"
+      },
+      {
+        name: "Tomato Soup",
+        price: 4.99,
+        description: "Creamy soup made with fresh tomatoes and basil"
+      }
+    ]
+  };
+  
+  console.log(restaurant);
+  
+  
+
+  
+  // Add a new dish to the menu
+  restaurant.menu.push({
+    name: "New Dish",
+    price: 9.99,
+    description: "A new dish added to the menu"
+  });
+  
+  // Update the price of a dish
+  restaurant.menu[0].price = 13.99;
+  
+  // Remove a dish from the menu
+  restaurant.menu.splice(1, 1);
+
+//Default parameters
+  function RectangleArea(width = 5, height = 7) {
+   
+    return width * height;
+  }
+ console.log(RectangleArea())
+
+
+// Values vs References
+
+
+const movie = "spiderman";
+
+const akhila = {
+    name:"akhila",
+    ticketno : 2234567,
+};
+const checkIn = function(moviename , ticket){
+    moviename = "Kalki"
+    ticket.name = "Mr."+ticket.name
+
+    if(ticket.ticketno === 2234567){
+        console.log("Booked  Successfully!");
+        console.log(`Booking details:${ticket.name} `);
+        console.log(ticket);
+    }else{
+        console.log("Invalid booking details");
+
+    }
+};
+checkIn(movie ,akhila);
+
+const moviename = movie;
+const ticket = akhila;
+
+console.log(`moviename:${moviename}`);
+console.log(`ticket :${ticket.name}`);
+
+//moviename = "Captain America";
+//ticket = 342567;
+
+console.log(`moviename : ${moviename}`);
+console.log(`ticket :${ticket.name}`);
+
+/////////////// Functions Accepting CallBack Functions
+// const oneWord = function (str) {
+//     console.log( str.replace(' ', ', ').toLowerCase());
+// };
+// const upperFirstWord = function (str) {
+//     const [first, ...others] = str.split(' ');
+//     return [first.toUpperCase(), ...others].join(' ');
+// };
+// oneWord('sumn')
+
+////////// Functions Returning Functions
+const congratulate = function (greeting) {
+    return function (name) {
+        console.log(`${greeting} ${name}`);
+    };
+};
+
+
+const greeterHey = congratulate ('Congratulations');
+greeterHey ('anitha');
+greeterHey ('Sai');
+
+// another way
+congratulate ('Congratulations')('Gayatri');
+
+
+
+///////// call(), apply() and bind() methods
+// const lufthansa = {
+//     airLine: 'Lufthansa', 
+//     iataCode: 'LH', 
+
+//     bookings: [], 
+
+//     book (flightNum, name) {
+//         console.log(`${name} booked a seat on ${this.airLine} flight ${this.iataCode}${flightNum}`);
+//         this.bookings.push({
+//             flight: `${this.iataCode}${flightNum}`, 
+//             name, 
+//         });
+//     }, 
+// };push
+
+const airindia = {
+    airline : 'Airindia',
+    Acode : "FC",
+
+    bookings : [],
+
+    book (flightNum, name){
+        console.log(`${name}  booked a seat on ${this.airline} flight ${this.Acode}${flightNum}`);
+        this.bookings.push({
+            flight:`${this.Acode}${flightNum}`,
+        });
+    }
+};
+airindia.book (63763473, 'Janu');
+airindia.book (48736484, 'Sunitha');
+
+
+const Wings = {
+    airLine: 'Wings', 
+    Acode: 'EW', 
+
+    bookings: [], 
+};
+
+
+const book = airindia.book;
+
+// it doesn't work
+// book (863646337, 'Sarah');
+
+
+/// call() method
+book.call(Wings, 7488456744, 'Sarah');
+console.log(Wings);
+
+
+book.call(Wings, 7489636573, 'Mary');
+console.log(Wings);
+
+
+const swiss = {
+    airLine: 'Swiss Air Lines', 
+    Acode: 'SW', 
+
+    bookings: [], 
+};
+
+book.call(swiss, 97544734784, 'Cooper');
+console.log(swiss);
+
+
+/// apply() method
+const flightData = [847362626, 'Gowri'];
+
+book.apply(Wings, flightData);
+
+flightData[0] = 9636622353;
+flightData[1] = 'Vaishnavi';
+
+book.call(Wings, ...flightData);
+console.log(Wings);
+
+/// bind() method
+const bookEW = book.bind(Wings);
+bookEW(9467536445, 'Akhila');
+
+// const bookFC = book.bind();
+// bookFC(562895439, 'Akhila');
+
+//////////// IIFE - Immediately Invoked Function Expressions
+const run = function () {
+    console.log("This will never run again!");
+}
+run();
+
+// IIFE
+(function (){
+    console.log("This is the iife function")
+})();
+
+(() => console.log("This will ALSO never run again!"))();
+
+
+////////// Closures
+
+const SBooking = function () {
+    let Count = 0;
+
+    return function () {
+        Count++;
+        console.log(`${Count} s`);
+    };
+};
+
+const booker = SBooking();
+booker();
+booker();
+booker();
+booker();
+
+///////////  Working with Strings 
+//spilt() and join()
+console.log('a very nice place');
+console.log('a+very+nice+village' . split('+'));
+console.log('Anu Priya' . split(' '));
+
+const [firstName, ...lastName] = 'Anu Priya is a Bank Employee' . split(' ');
+console.log(firstName);
+console.log(lastName);
+
+//toUpperCase(),toLowerCase()
+console.log(firstName.toUpperCase())
+console.log(firstName.toLowerCase())
+
+//padding
+const text = "Hi hello every one! ";
+console.log(text);
+console.log(text.length);
+console.log(text.padStart(29, '+').padEnd(30, '+'));
+console.log('Janu'.padStart(10, '+').padEnd(20, '+'));
+
+console.log(text.repeat(5));
+console.log(text.slice(1));
+
+console.log(text.startsWith("Hi"));
+console.log(text.endsWith("Hi"));
+
+console.log(text.includes("Hi"));
+
+// Fix Capitalization in name
+const passenger = 'jAyaNtHi';
+console.log(passenger);
+
+const passengerLower = passenger.toLowerCase();
+console.log(passengerLower);
+
+const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+
+
+
+
+// Comparing Emails
+const email = 'hello@xceediq.com';
+const loginEmail = '    Hello@xceediq.com   \n';
+
+console.log(email);
+console.log(loginEmail);
+
+if (email === loginEmail) console.log('Both emails are matching!');
+else console.log('Both emails are not matching!');
+
+const normalizeEmail = loginEmail.toLowerCase().trim();
+console.log(normalizeEmail);
+
+
+
